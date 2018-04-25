@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="yang-web-war:war">
+    <output-path>$PROJECT_DIR$/yang-web-war/target</output-path>
+    <root id="archive" name="yang-web-war.war">
+      <element id="artifact" artifact-name="yang-web-war:war exploded" />
+    </root>
+  </artifact>
+</component>

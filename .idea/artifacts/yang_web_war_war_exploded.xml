@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="yang-web-war:war exploded">
+    <output-path>$PROJECT_DIR$/yang-web-war/target/yang-web-war</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="yang-web-war" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.14.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.14.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.14.RELEASE" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.14.RELEASE" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/yang-web-war/target/yang-web-war/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="yang-web-war/web/Web" />
+    </root>
+  </artifact>
+</component>
