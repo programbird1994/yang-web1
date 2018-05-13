@@ -18,7 +18,7 @@ public class HibernateConfiguration {
     @Bean
     @Autowired
     public SessionFactory sessionFactory(DreamDataSource dreamDataSource) throws IOException {
-        SessionFactory sessionFactory = new SessionFactoryImpl();
+        // SessionFactory sessionFactory = new SessionFactoryImpl();
         return localSessionFactoryBean().getObject();
     }
 
