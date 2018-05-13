@@ -10,6 +10,9 @@ import java.util.Properties;
 
 @Component
 public class GeneralPropertiesPlaceHolderConfiguer extends PropertyPlaceholderConfigurer {
-
+    public GeneralPropertiesPlaceHolderConfiguer() {
+        super();
+        System.out.println("general oroperties plac eholder construct complete");
+    }
 
 }

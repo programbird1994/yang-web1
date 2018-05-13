@@ -5,17 +5,14 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import org.omg.CORBA.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@Import(InitFilePropsConfiguration.class)
 public class InitDbPropsConfiguration {
 
     @Bean
@@ -29,9 +26,14 @@ public class InitDbPropsConfiguration {
 
     }
 
-    @Bean
     @Autowired
-    public DataSource initDataSource(@Qualifier("local") Properties properties) {
+    @Qualifier("local")
+    Properties properties;
+
+    @Bean
+    @DependsOn({"localFileProperties"})
+    public DataSource initDataSource() {
+        // properties=(Properties)properties;
         BasicDataSource initDataSource = new BasicDataSource();
         initDataSource.setUrl(properties.getProperty("mysql.jdbc.url"));
         initDataSource.setUsername(properties.getProperty("mysql.jdbc.user"));
